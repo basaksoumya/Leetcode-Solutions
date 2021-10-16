@@ -1,50 +1,50 @@
-<h2>744. Find Smallest Letter Greater Than Target</h2><h3>Easy</h3><hr><div style="user-select: auto;"><p style="user-select: auto;">Given a characters array <code style="user-select: auto;">letters</code> that is sorted in <strong style="user-select: auto;">non-decreasing</strong> order and a character <code style="user-select: auto;">target</code>, return <em style="user-select: auto;">the smallest character in the array that is larger than </em><code style="user-select: auto;">target</code>.</p>
+<h2>744. Find Smallest Letter Greater Than Target</h2><h3>Easy</h3><hr><div><p>Given a characters array <code>letters</code> that is sorted in <strong>non-decreasing</strong> order and a character <code>target</code>, return <em>the smallest character in the array that is larger than </em><code>target</code>.</p>
 
-<p style="user-select: auto;"><strong style="user-select: auto;">Note</strong> that the letters wrap around.</p>
+<p><strong>Note</strong> that the letters wrap around.</p>
 
-<ul style="user-select: auto;">
-	<li style="user-select: auto;">For example, if <code style="user-select: auto;">target == 'z'</code> and <code style="user-select: auto;">letters == ['a', 'b']</code>, the answer is <code style="user-select: auto;">'a'</code>.</li>
+<ul>
+	<li>For example, if <code>target == 'z'</code> and <code>letters == ['a', 'b']</code>, the answer is <code>'a'</code>.</li>
 </ul>
 
-<p style="user-select: auto;">&nbsp;</p>
-<p style="user-select: auto;"><strong style="user-select: auto;">Example 1:</strong></p>
+<p>&nbsp;</p>
+<p><strong>Example 1:</strong></p>
 
-<pre style="user-select: auto;"><strong style="user-select: auto;">Input:</strong> letters = ["c","f","j"], target = "a"
-<strong style="user-select: auto;">Output:</strong> "c"
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "a"
+<strong>Output:</strong> "c"
 </pre>
 
-<p style="user-select: auto;"><strong style="user-select: auto;">Example 2:</strong></p>
+<p><strong>Example 2:</strong></p>
 
-<pre style="user-select: auto;"><strong style="user-select: auto;">Input:</strong> letters = ["c","f","j"], target = "c"
-<strong style="user-select: auto;">Output:</strong> "f"
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "c"
+<strong>Output:</strong> "f"
 </pre>
 
-<p style="user-select: auto;"><strong style="user-select: auto;">Example 3:</strong></p>
+<p><strong>Example 3:</strong></p>
 
-<pre style="user-select: auto;"><strong style="user-select: auto;">Input:</strong> letters = ["c","f","j"], target = "d"
-<strong style="user-select: auto;">Output:</strong> "f"
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "d"
+<strong>Output:</strong> "f"
 </pre>
 
-<p style="user-select: auto;"><strong style="user-select: auto;">Example 4:</strong></p>
+<p><strong>Example 4:</strong></p>
 
-<pre style="user-select: auto;"><strong style="user-select: auto;">Input:</strong> letters = ["c","f","j"], target = "g"
-<strong style="user-select: auto;">Output:</strong> "j"
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "g"
+<strong>Output:</strong> "j"
 </pre>
 
-<p style="user-select: auto;"><strong style="user-select: auto;">Example 5:</strong></p>
+<p><strong>Example 5:</strong></p>
 
-<pre style="user-select: auto;"><strong style="user-select: auto;">Input:</strong> letters = ["c","f","j"], target = "j"
-<strong style="user-select: auto;">Output:</strong> "c"
+<pre><strong>Input:</strong> letters = ["c","f","j"], target = "j"
+<strong>Output:</strong> "c"
 </pre>
 
-<p style="user-select: auto;">&nbsp;</p>
-<p style="user-select: auto;"><strong style="user-select: auto;">Constraints:</strong></p>
+<p>&nbsp;</p>
+<p><strong>Constraints:</strong></p>
 
-<ul style="user-select: auto;">
-	<li style="user-select: auto;"><code style="user-select: auto;">2 &lt;= letters.length &lt;= 10<sup style="user-select: auto;">4</sup></code></li>
-	<li style="user-select: auto;"><code style="user-select: auto;">letters[i]</code> is a lowercase English letter.</li>
-	<li style="user-select: auto;"><code style="user-select: auto;">letters</code> is sorted in <strong style="user-select: auto;">non-decreasing</strong> order.</li>
-	<li style="user-select: auto;"><code style="user-select: auto;">letters</code> contains at least two different characters.</li>
-	<li style="user-select: auto;"><code style="user-select: auto;">target</code> is a lowercase English letter.</li>
+<ul>
+	<li><code>2 &lt;= letters.length &lt;= 10<sup>4</sup></code></li>
+	<li><code>letters[i]</code> is a lowercase English letter.</li>
+	<li><code>letters</code> is sorted in <strong>non-decreasing</strong> order.</li>
+	<li><code>letters</code> contains at least two different characters.</li>
+	<li><code>target</code> is a lowercase English letter.</li>
 </ul>
 </div>
