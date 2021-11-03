@@ -11,69 +11,28 @@
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        ListNode *num1 = l1, *num2 = l2,*prev;
-        int carry = 0,len1 = 0,len2 = 0;
-        while(num1 != NULL) {
-            num1 = num1 -> next;
-            len1++;
-        }
-         while(num2 != NULL) {
-            num2 = num2 -> next;
-            len2++;
-        }
-        num1 = l1,num2 = l2;
-        ListNode *ans;
+        ListNode *head = new ListNode(0);
+        ListNode *p = l1, *q = l2, *curr = head;
+        int carry = 0;
         
-        if(len1 >= len2)
-            ans = num1;
-        else
-            ans = num2;
-        
-        while(num1 != NULL && num2 != NULL) {
+        while(p != NULL || q != NULL) {
+            int x = p ? p->val : 0;
+            int y = q ? q->val : 0;
+            int sum = x + y + carry;
             
-            ans -> val = num1 -> val + num2 -> val + carry;
-            if(ans -> val >= 10) {
-                ans -> val = ans -> val - 10;
-                carry = 1;
-            }else{
-                carry = 0;
-            }
-            prev = ans;
-            ans = ans -> next;
-            num1 = num1 -> next;
-            num2 = num2 -> next;
+            
+            carry = sum / 10;
+            curr -> next = new ListNode(sum % 10);
+            curr = curr -> next;
+            if(p)
+                p = p -> next;
+            if(q)
+                q = q -> next; 
         }
         
-        while(num1 != NULL) {
-            ans -> val = carry + num1 -> val;
-            if(ans -> val >= 10) {
-                ans -> val = ans -> val - 10;
-                carry = 1;
-            }else{
-                carry = 0;
-            }
-            prev = ans;
-            ans = ans -> next;
-            num1 = num1 -> next;
+        if(carry > 0) {
+            curr -> next = new ListNode(carry);
         }
-        
-        while(num2 != NULL) {
-            ans -> val = carry + num2 -> val;
-            if(ans -> val >= 10) {
-                ans -> val = ans -> val - 10;
-                carry = 1;
-            }else{
-                carry = 0;
-            }
-            prev = ans;
-            ans = ans -> next;
-            num2 = num2 -> next;
-        }
-        
-        if(carry) {
-            prev -> next = new ListNode(carry);
-        }
-        
-        return (len1 >= len2) ? l1 : l2;
+        return head -> next;
     }
 };
