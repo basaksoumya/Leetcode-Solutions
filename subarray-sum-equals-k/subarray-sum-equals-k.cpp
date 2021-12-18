@@ -18,5 +18,5 @@ public:
            mp[sum]++;
         }
         return count;
-    }        
+    }      
 };
