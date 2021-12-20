@@ -1,15 +1,16 @@
 class Solution {
 public:
     int missingNumber(vector<int>& nums) {
-        int maxNumber = nums.size(), sum = 0;
         
-        for(auto it : nums) {
-            sum += it;
+        int n=nums.size();
+        
+        int x1=0, x2=0;
+        for(int i=0;i<n;i++){
+            
+            x1=x1^nums[i];
+            x2=x2^(i+1);
+            
         }
-        
-        int sumOfNaturalNumbers = maxNumber * (maxNumber + 1) / 2;
-        
-        return sumOfNaturalNumbers - sum;
-        
+        return x1^x2;
     }
 };
