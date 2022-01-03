@@ -1,7 +1,7 @@
 class Solution {
 public:
     int characterReplacement(string s, int k) {
-        int right = 0, left = 0, maxLetter = 0;
+        int right = 0, left = 0, ans = 0, maxLetter = 0;
         int alphabet[26] = {0};
         while(right < s.length()) {
             alphabet[s[right] - 'A']++;
@@ -12,8 +12,9 @@ public:
                 alphabet[s[left] - 'A']--;
                 left++;
             }
+            ans = max(ans,right-left);
         }
-        return right - left;
+        return ans;
     }
     
 };
