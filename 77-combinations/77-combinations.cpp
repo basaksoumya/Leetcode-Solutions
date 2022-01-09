@@ -1,33 +1,26 @@
 class Solution {
 public:
+    vector<vector<int>> ans;
     
-    void allCombinations(int index,int n,int k,vector<int> temp,vector<vector<int>> &ans) {
-        
-        if(k == temp.size()) {
-            ans.push_back(temp);
+    void helper(int idx, int k,vector<int>&current,int n)
+    {
+        if(current.size()==k)    // base case
+        {
+            ans.push_back(current);
             return;
         }
         
-        if(k < 0 || index > n) {
-           return; 
-        }
-        
-        for(int i = index; i <= n ; i++) {
-            temp.push_back(i);
-            allCombinations(i+1,n,k,temp,ans);
-            temp.pop_back();
+        for(int i=idx;i<n+1;i++)
+        {
+            current.push_back(i);  //consider the current element i
+            helper(i+1,k,current,n); // generate combinations
+            current.pop_back(); //proceed to next element
         }
     }
     
-    
-    
     vector<vector<int>> combine(int n, int k) {
-        vector<vector<int>> ans;
-        if(k > n)
-            return ans;
-        int index = 1;
-        vector<int> temp;
-        allCombinations(index,n,k,temp,ans);
-        return ans;
+        vector<int>current;
+        helper(1,k,current,n);
+        return ans; //return answer
     }
 };
