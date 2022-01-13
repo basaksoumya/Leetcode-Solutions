@@ -31,7 +31,6 @@ public:
             }
         }
         len = max(len,end-start+1);
-        cout << "start = " << start << " end = " << end << endl;
         return start != -1 ? end - start + 1 : 0;
     }
 };
