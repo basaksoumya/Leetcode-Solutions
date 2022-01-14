@@ -1,27 +1,14 @@
 class Solution {
 public:
-    
-    
-    int maxCoinsRecursive(vector<int> &nums,int i , int j, vector<vector<int>> &dp) {
-        if(i > j)
-            return 0;
-        if(dp[i][j] != -1)
-            return dp[i][j];
-        int maximum = INT_MIN;
-        
-        for(int k = i ; k <= j ; k++) {
-            int temp = maxCoinsRecursive(nums,i,k-1,dp) + maxCoinsRecursive(nums,k+1,j,dp) + nums[i-1]*nums[k]*nums[j+1];
-            maximum = max(maximum,temp);
-        }
-        return dp[i][j] = maximum;
-    }
-    
-    
-    
     int maxCoins(vector<int>& nums) {
-        nums.insert(nums.begin(),1);
-        nums.push_back(1);
-        vector<vector<int>> dp(nums.size(),vector<int>(nums.size(),-1));
-        return maxCoinsRecursive(nums,1,nums.size()-2,dp);
+        vector<int> vals(2, 1); 
+        vals.insert(vals.begin()+1, nums.begin(), nums.end()); 
+        int n = vals.size(); 
+        vector<vector<int>> dp(n, vector<int>(n)); 
+        for (int i = n-1; i >= 0; --i)
+            for (int j = i; j < n; ++j)
+                for (int k = i+1; k < j; ++k)
+                    dp[i][j] = max(dp[i][j], dp[i][k] + dp[k][j] + vals[i]*vals[k]*vals[j]); 
+        return dp[0].back(); 
     }
 };
